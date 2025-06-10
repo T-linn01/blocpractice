@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CounterButtons extends StatelessWidget {
-  final VoidCallback onIncrement;
-  final VoidCallback onDecrement;
+  final onIncrement;
+  final onDecrement;
 
   const CounterButtons({
     super.key,
-    required this.onIncrement,
-    required this.onDecrement,
+    this.onIncrement,
+    this.onDecrement,
   });
 
   @override
