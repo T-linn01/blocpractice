@@ -21,6 +21,8 @@ class CounterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final counterBloc = context.read<CounterBloc>();
+
     return Scaffold(
       appBar: AppBar(title: const Text("Counter với BLoC")),
       body: Center(
@@ -34,8 +36,8 @@ class CounterView extends StatelessWidget {
         ),
       ),
       floatingActionButton: CounterButtons(
-        onIncrement: () => context.read<CounterBloc>().add(CounterIncremented()),
-        onDecrement: () => context.read<CounterBloc>().add(CounterDecremented()),
+        onIncrement: () => counterBloc.add(CounterIncremented()),
+        onDecrement: () => counterBloc.add(CounterDecremented()),
       ),
     );
   }
